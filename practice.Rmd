@@ -1,0 +1,15 @@
+---
+title: "practice"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## read the data
+
+```{r}
+data <- read.csv("./data for practice.csv")
+```
+
