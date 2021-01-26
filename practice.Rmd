@@ -13,3 +13,19 @@ knitr::opts_chunk$set(echo = TRUE)
 data <- read.csv("./data for practice.csv")
 ```
 
+## Cleaning the data
+ID as row names
+```{r}
+row.names(data) <- data$ID
+data <- data[,-1]
+```
+
+Tidy the data
+```{r}
+data$Ki67_Group <- as.factor(data$Ki.67 >3) # Group Ki-67
+c.factor <- c(1,3,4,12,14,15,16,17)
+data[c.factor] <- as.data.frame(lapply(data[c.factor], as.factor)) # convert to factor
+str(data)
+```
+
+
